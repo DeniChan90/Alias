@@ -1,0 +1,27 @@
+.score-wrapper {
+  float: right;
+  width : 20%;
+  display: inline-block;
+}
+
+.player-score {
+  font-size : 32px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .score-wrapper {
+    padding: 10px;
+    float: left;
+    width : 100%;
+  }
+
+  .score-wrapper h2 {
+    margin: 5px 0;
+    font-size : 18px;
+  }
+
+  .player-score {
+    font-size : 18px;
+  }
+}

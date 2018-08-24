@@ -1,0 +1,13 @@
+.player-name-input {
+  width : 100%;
+}
+
+.start-game {
+  margin: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .start-game {
+    width : 100%;
+  }
+}

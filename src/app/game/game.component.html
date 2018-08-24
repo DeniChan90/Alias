@@ -1,0 +1,26 @@
+<app-player-selector *ngIf='step === "player-select"' (nextStep)='changeGameStep($event)'></app-player-selector>
+
+<div *ngIf='step === "game"'>
+  <h3>{{playerTurn}} is going to explain the words! Ready?</h3>
+  <app-score></app-score>
+  <mat-card class='game-container'>
+      <button mat-raised-button color="primary"  class='go-button' *ngIf='!time' (click)='startGame()'>GO!</button>
+
+      <div *ngIf='time'>
+        <span>Time : </span><b>{{time.seconds}}</b>
+        <h1 class='main-word'>{{word}}</h1>
+        <button mat-raised-button color="warn" class='game-button' (click)='correctAnswer(false)'>I don't know WTF is this word!</button>
+        <button mat-stroked-button class='game-button' (click)='skip()'>Skip</button>
+        <button mat-raised-button class='game-button' color="primary" (click)='correctAnswer(true)'>Correct!</button>
+      </div>
+
+  </mat-card>
+
+
+  <mat-card *ngIf='!time && words.length' class='words-list'>
+    <div *ngFor='let word of words' [ngClass]='{"correct" : word.correct, "wrong" : !word.correct}'>
+      <span class='word'>{{word.word}}</span>
+      <mat-icon>{{word.correct ? 'done' : 'clear'}}</mat-icon>
+    </div>
+  </mat-card>
+</div>

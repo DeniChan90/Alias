@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-form-field appearance="outline" class='player-name-input'>
+    <mat-label>Player 1 name</mat-label>
+    <input matInput placeholder="Placeholder" [(ngModel)]='player1'>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class='player-name-input'>
+    <mat-label>Player 2 name</mat-label>
+    <input matInput placeholder="Placeholder" [(ngModel)]='player2'>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)='startGame()' class='start-game'>Start</button>
+</mat-card>
