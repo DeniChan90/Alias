@@ -2,7 +2,7 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path');
 const app = express()
-const port = 3001
+const port = 8080
 
 app.get('/api/get_word', (request, response) => {
   fs.readFile('./words.txt', 'utf-8', function(err, data) {
